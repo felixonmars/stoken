@@ -137,7 +137,7 @@ int stc_b64_decode(const uint8_t *in,  unsigned long len,
 	struct base64_decode_ctx ctx;
 	char tmp[BASE64_DECODE_LENGTH(len)];
 	int ret;
-	size_t dst_length;
+	size_t dst_length = sizeof(tmp);
 
 	base64_decode_init(&ctx);
 	ret = base64_decode_update(&ctx, &dst_length, tmp, len, in);
